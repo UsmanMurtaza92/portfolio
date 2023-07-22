@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0a192f;
+}
+
+.logo-box {
+  height: 49px;
+  width: 42px;
+  background-color: #64ffda;
+  position: relative;
+}
+.logo-box::after {
+  content: '';
+  position: absolute;
+  top: 2.5;
+  left: 2.5;
+  height: 44.5px;
+  width: 37.5px;
+  background-color: #0a192f;
+  z-index: -1;
+}
+
+.logo-box,
+.logo-box::after {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.custom-img {
+  height: unset !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.project_image_layer img {
+  transform: scale(1.06);
+  transition: all .3s ease-in-out;
+}
+
+.project_image_layer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 155, 125, 0.4);
+  transition: all .3s ease-in-out;
+}
+
+.project_image_layer:hover:after {
+  background-color: transparent;
+}
+
+.project_image_layer:hover img {
+  transform: scale(1);
+}
+
+.btn-hover-effect:hover {
+  transform: translate(-3.5px, -3.5px);
+  box-shadow: 3.5px 3px 0 0 #64ffda;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  padding-right: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #24375c;
+  border-radius: 5rem;
+}
+
+.loading-bar {
+  animation: stretch .7s ease-in-out;
+  animation-delay: .3s;
+}
+
+.heading {
+  animation: slideUp .2s ease-out forwards;
+  animation-delay: .7s;
+}
+
+.sub-heading {
+  animation: slideDown .2s ease-out forwards;
+  animation-delay: .7s;
+}
+
+.active {
+  color: #64ffda !important;
+}
+
+@keyframes slideUp {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes stretch {
+  0%{
+    width: 0%;
+  }
+  50%{
+    width: 100%;
+  }
+  60%{
+    width: 100%;
+  }
+  70%{
+    width: 100%;
+  }
+  80%{
+    width: 100%;
+  }
+  90%{
+    width: 50%;
+  }
+  100%{
+    width: 0%;
+  }
+}
