@@ -39,12 +39,8 @@ const Home = () => {
             transition={{ duration: 0.3, delay: 2.5 }}
             className="text-Slate mt-9 mb-12 text-[17px] leading-7 max-w-2xl w-full pr-7"
           >
-            I am a web developer with 4+ years of experience in React. I have a
-            strong foundation in front-end & back-end development and am skilled
-            in creating user-friendly and responsive web applications using
-            React and its ecosystem.
+            As an experienced Frontend Software Engineer, I have a strong record in creating and implementing interactive and user-centric applications. I{"'"}m passionate about cutting-edge, pixel-perfect, beautiful interfaces and intuitively implemented UX.
           </motion.p>
-          {/* <p className="text-lg mb-8 text-primary">Learn More</p> */}
           <Link
             activeClass="active"
             to="contact"

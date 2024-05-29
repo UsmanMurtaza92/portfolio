@@ -4,91 +4,8 @@ import Heading from "./Heading";
 import FeatureProjectCard from "./FeatureProjectCard";
 import ProjectCard from "./ProjectCard";
 import { motion, Variants } from "framer-motion";
-import project1 from "@/public/images/projects/project1.png";
-import project2 from "@/public/images/projects/project2.png";
-import project3 from "@/public/images/projects/project3.png";
+import { featuredProjects, projects } from '@/constants/projects'
 import Button from "./Button";
-
-const featuredProjects = [
-  {
-    name: "Rent My Ride, Car Rental",
-    image: project1,
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride. It also provides a platform for car owners to list their vehicles for rent.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit", "Crypto Payment"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Sendtime, Scheduling App",
-    image: project2,
-    detail:
-      "Sendtime is a scheduling tool that is easy to use, flexible, and powerful. It can help users save time by efficiently scheduling and rescheduling appointments and create a personalized booking page with just a few clicks.",
-    tech: ["React", "Styled Components", "TypeScript", "Context API"],
-    webUrl: "https://landing.sendtime.app/en",
-    githubUrl: "",
-  },
-  {
-    name: "Spark Capture Online Showroom",
-    image: project3,
-    detail:
-      "Spark Capture is a team of passionate photographers who offer turnkey inventory merchandising solutions for car dealerships. They work with various dealerships to create the best visual experience for their online inventories.",
-    tech: ["Nuxt.js", "Tailwind CSS", "Vuex", "Nuxt Axios"],
-    webUrl: "https://www.sparkcapture.com/",
-    githubUrl: "",
-  },
-];
-
-const projects = [
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride. luxury cars and book their preferred car for a ride.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride. luxury cars and book their preferred car for a ride.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-  {
-    name: "Rent My Ride, Car Rental",
-    detail:
-      "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride.",
-    tech: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
-    webUrl: "https://www.rentmyride.ae/",
-    githubUrl: "",
-  },
-];
 
 const Project = () => {
   const productVariants: Variants = {
@@ -120,6 +37,9 @@ const Project = () => {
           >
             <Heading headingNumber={3} headingText="Some Things I’ve Built" />
           </motion.div>
+
+          {/*      FEATURED PROJECTS      */}
+
           <div className="flex flex-col gap-28 my-14">
             {featuredProjects.map((data, index) => (
               <motion.div
@@ -133,6 +53,9 @@ const Project = () => {
               </motion.div>
             ))}
           </div>
+
+          {/*      OTHER PROJECTS      */}
+
           <div className="mt-36">
             <motion.h1
               initial="offscreen"

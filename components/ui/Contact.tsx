@@ -45,7 +45,7 @@ const Contact = () => {
           whileInView="onscreen"
           viewport={{ once: true }}
           variants={productVariants}
-          className="mt-7 mb-12 max-w-xl w-full mx-auto text-center ">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+          className="mt-7 mb-12 max-w-xl w-full mx-auto text-center ">Although I’m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
         </motion.p>
         <motion.a
           initial="offscreen"

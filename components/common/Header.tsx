@@ -44,6 +44,7 @@ const Header = () => {
         window.removeEventListener("scroll", controlNavbar);
       };
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
   const controlNavbar = () => {
@@ -66,7 +67,7 @@ const Header = () => {
       } transition-all duration-300 ease-in-out  backdrop-filter backdrop-blur-md bg-body/80 px-16 z-50`}
     >
         <div className="flex justify-between items-center gap-10">
-         
+        
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -107,7 +108,9 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 2 }}
             >
-              <Button text="Resume" link="/" size="small" />
+              <a href='/files/resume.pdf' download>
+                <Button text="Resume" link="/" size="small" />
+              </a>
             </motion.div>
           </div>
         </div>
