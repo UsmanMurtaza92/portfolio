@@ -33,7 +33,7 @@ const LeftSidebar = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: .6, delay: 3 }}
-      className='fixed left-0 bottom-0 flex flex-col items-center gap-7 p-4 lg:pl-12 pb-0'>
+      className='fixed left-0 bottom-0 md:flex hidden flex-col items-center gap-7 p-4 lg:pl-12 pb-0'>
       {socialLinks.map((social, index) => 
         <div key={index} className='flex justify-center items-center cursor-pointer transform transition duration-150 ease-linear hover:-translate-y-1.5 group'>
           <Link href={social.link} legacyBehavior>

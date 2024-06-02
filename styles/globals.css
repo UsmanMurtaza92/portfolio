@@ -61,7 +61,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(27, 155, 125, 0.4);
+  background-color: rgba(36, 71, 63, 0.8);
   transition: all 0.3s ease-in-out;
 }
 
@@ -87,6 +87,16 @@ body {
   background-color: #24375c;
   border-radius: 5rem;
 } */
+
+.project-layer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 25, 47, 0.92);
+}
 
 .loading-bar {
   animation: stretch 0.7s ease-in-out;
@@ -118,6 +128,10 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.loading-heading {
+  font-size: clamp(1rem, 10vw, 3rem);
+}
+
 @keyframes slideUp {
   0% {
     transform: translateY(100%);
@@ -147,6 +161,9 @@ body {
     width: 100%;
   }
   70% {
+    .project-layer {
+      background-image: none;
+    }
     width: 100%;
   }
   80% {
@@ -157,5 +174,15 @@ body {
   }
   100% {
     width: 0%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .project-layer {
+    background-image: none !important;
+  }
+
+  .project-layer::after {
+    display: none;
   }
 }

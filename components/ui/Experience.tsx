@@ -105,7 +105,7 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      className="py-20 max-w-4xl w-full mx-auto"
+      className="md:py-32 py-24 max-w-4xl w-full mx-auto"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true }}
@@ -114,25 +114,33 @@ const Experience = () => {
       <Container>
         <div>
           <Heading headingNumber={2} headingText="Where I’ve Worked" />
-          <div className="flex items-start mt-10 mb-5">
-            <div className="flex-shrink-0 relative border-l-[3px] border-Slate/20">
-              <div
-                style={{ top: `${43 * (selectedWork.id - 1)}px` }}
-                className="absolute left-0 h-[43px] w-[3px] bg-primary transition-all duration-300 linear transform -translate-x-[3px] rounded-md "
-              ></div>
-              {workHistory.map((work, index) => (
+          <div className="flex md:flex-row flex-col items-start mt-10 mb-5">
+            <div className="overflow-x-scroll md:w-auto w-full flex-shrink-0">
+              <div className="md:block flex flex-shrink-0 relative md:border-l-[3px] border-Slate/20">
                 <div
-                  key={index}
-                  onClick={() => setSelectedWork(work)}
-                  className={`${
-                    work.id === selectedWork.id ? " text-primary" : "text-Slate"
-                  } hover:bg-LightNavy hover:text-primary cursor-pointer h-[43px] flex items-center transition-all duration-150 ease-linear text-sm pl-5 pr-6 select-none `}
-                >
-                  {work.name}
-                </div>
-              ))}
+                  style={{ top: `${43 * (selectedWork.id - 1)}px` }}
+                  className="md:block hidden absolute left-0 h-[43px] w-[3px] bg-primary transition-all duration-300 linear transform -translate-x-[3px] rounded-md "
+                ></div>
+                {/* For mobile screen */}
+                <div
+                  style={{ left: `${176 * (selectedWork.id - 1)}px` }}
+                  className="md:hidden block absolute bottom-0 w-44 h-[2px] bg-primary transition-all duration-300 linear transform md:-translate-x-[3px] rounded-md"
+                ></div>
+
+                {workHistory.map((work, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedWork(work)}
+                    className={`${
+                      work.id === selectedWork.id ? " text-primary" : "text-Slate"
+                    } hover:bg-LightNavy hover:text-primary cursor-pointer flex-shrink-0 h-[43px] md:w-auto w-44 md:border-b-0 border-b-[3px] border-Slate/20 md:text-sm text-xs flex items-center transition-all duration-150 ease-linear pl-5 pr-6 select-none md:justify-start justify-center `}
+                  >
+                    {work.name}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="transition-all duration-300 ease-linear w-full pt-1 pb-2 pr-5 pl-10 min-h-[350px]">
+            <div className="transition-all duration-300 ease-linear w-full md:pt-1 pt-5 pb-2 md:pr-5 md:pl-10 min-h-[350px]">
               {!isLoadingWork && (
                 <>
                   <h1 className="font-medium text-lg text-LightestSlate">

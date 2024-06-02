@@ -28,7 +28,7 @@ const Contact = () => {
           whileInView="onscreen"
           viewport={{ once: true }}
           variants={productVariants}
-          className="text-center text-primary  mb-4">
+          className="text-center text-primary lg:text-base md:text-sm text-xs lg:mb-4 md:mb-3 mb-1">
           04. What{"'"}s Next?
         </motion.p>
         <motion.h1
@@ -36,7 +36,7 @@ const Contact = () => {
           whileInView="onscreen"
           viewport={{ once: true }}
           variants={productVariants}
-          className="text-[44px] leading-10 font-semibold text-LightestSlate text-center"
+          className="lg:text-[44px] md:text-3xl text-2xl leading-10 font-semibold text-LightestSlate text-center"
         >
           Get In Touch
         </motion.h1>
@@ -45,7 +45,7 @@ const Contact = () => {
           whileInView="onscreen"
           viewport={{ once: true }}
           variants={productVariants}
-          className="mt-7 mb-12 max-w-xl w-full mx-auto text-center ">Although I’m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+          className="mt-7 mb-12 max-w-xl w-full mx-auto text-center md:text-base text-[15px] ">Although I’m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
         </motion.p>
         <motion.a
           initial="offscreen"

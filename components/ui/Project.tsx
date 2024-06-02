@@ -40,7 +40,7 @@ const Project = () => {
 
           {/*      FEATURED PROJECTS      */}
 
-          <div className="flex flex-col gap-28 my-14">
+          <div className="flex flex-col lg:gap-28 md:gap-52 gap-10 lg:my-14 md:my-32 my-14">
             {featuredProjects.map((data, index) => (
               <motion.div
                 initial="offscreen"
@@ -62,7 +62,7 @@ const Project = () => {
               whileInView="onscreen"
               viewport={{ once: true }}
               variants={productVariants}
-              className="text-3xl font-semibold text-LightestSlate text-center"
+              className="md:text-3xl text-2xl font-semibold text-LightestSlate text-center"
             >
               Other Noteworthy Projects
             </motion.h1>
@@ -80,7 +80,7 @@ const Project = () => {
               whileInView="onscreen"
               viewport={{ once: true }}
               variants={productVariants}
-              className="grid grid-cols-3 gap-x-3.5 gap-y-4 mt-12"
+              className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-3.5 gap-y-4 mt-12"
             >
               {projects.map(
                 (data, index) =>

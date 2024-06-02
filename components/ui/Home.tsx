@@ -13,7 +13,7 @@ const Home = () => {
             initial={{ y: 28, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 2.2 }}
-            className="text-lg text-primary tracking-widest"
+            className="xl:text-lg md:text-base text-sm text-primary tracking-widest"
           >
             Hi, my name is
           </motion.p>
@@ -21,7 +21,7 @@ const Home = () => {
             initial={{ y: 28, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 2.3 }}
-            className="text-LightestSlate text-6xl font-bold mb-4 mt-6"
+            className="text-LightestSlate xl:text-6xl md:text-5xl text-3xl font-bold lg:mb-4 mb-2 xl:mt-6 mt-3"
           >
             Muhammad Usman.
           </motion.h1>
@@ -29,7 +29,7 @@ const Home = () => {
             initial={{ y: 28, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 2.4 }}
-            className="text-6xl font-bold text-Slate"
+            className="xl:text-6xl md:text-5xl text-3xl font-bold text-Slate"
           >
             I build things for the web.
           </motion.h1>
@@ -37,7 +37,7 @@ const Home = () => {
             initial={{ y: 28, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 2.5 }}
-            className="text-Slate mt-9 mb-12 text-[17px] leading-7 max-w-2xl w-full pr-7"
+            className="text-Slate md:mt-9 mt-6 md:mb-12 mb-8 md:text-[17px] text-[15px] md:leading-7 leading-6 max-w-2xl w-full pr-7"
           >
             As an experienced Frontend Software Engineer, I have a strong record in creating and implementing interactive and user-centric applications. I{"'"}m passionate about cutting-edge, pixel-perfect, beautiful interfaces and intuitively implemented UX.
           </motion.p>

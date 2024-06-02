@@ -30,7 +30,7 @@ export default function Page() {
       <Header />
       <LeftSidebar />
       <RightSidebar />
-      <main className={`max-w-6xl w-[80%] mx-auto`}>
+      <main className={`max-w-6xl md:w-[80%] w-full mx-auto`}>
         <Home />
         <About />
         <Experience />
@@ -44,11 +44,11 @@ export default function Page() {
       <div className={`${isLoading ? 'bg-black/40 backdrop-blur-lg' : 'bg-transparent -translate-y-full backdrop-blur-0'} transform transition-all duration-700  ease-in-out backdrop-filter fixed top-0 left-0 h-full w-full flex justify-center items-center z-50`}>
         <div className="flex flex-col items-center w-max ">
           <div className="min-h-[55px] w-full overflow-hidden">
-            <h1 className="heading text-center text-5xl font-bold text-LightestSlate transform translate-y-full mt-2">Muhammad Usman</h1>
+            <h1 className="heading text-center lg:text-5xl md:text-4xl text-3xl font-bold text-LightestSlate transform translate-y-full lg:mt-2 md:mt-4 mt-6">Muhammad Usman</h1>
           </div>
           <div className="loading-bar h-0.5 bg-LightestSlate rounded-md my-1"></div>
           <div className="min-h-[30px] w-full overflow-hidden">
-            <p className="sub-heading text-center text-xl uppercase font-smeibold transform -translate-y-full text-primary">Front end Software Engineer</p>
+            <p className="sub-heading text-center lg:text-xl md:text-lg text-[15px] uppercase font-smeibold transform -translate-y-full text-primary">Front end Software Engineer</p>
           </div>
         </div>
       </div>

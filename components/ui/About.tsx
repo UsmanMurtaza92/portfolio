@@ -58,7 +58,7 @@ const About = () => {
             <Heading headingNumber={1} headingText="About Me" />
           </motion.div>
           <div className="">
-            <div className="flex flex-col gap-5 my-5 text-Slate">
+            <div className="flex flex-col gap-5 my-5 text-Slate md:text-base text-sm leading-normal ">
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
@@ -79,7 +79,7 @@ const About = () => {
                 <br /> <br />
                 Here are a few technologies I’ve been working with recently:
 
-                <div className="grid grid-flow-row grid-cols-3 mt-5">
+                <div className="grid md:grid-cols-3 grid-cols-2 mt-5">
                   {skills?.map((name, index) => <div key={index} className="flex items-center gap-2">
                       <Icon
                         icon="mdi:arrow-compass"

@@ -64,7 +64,7 @@ const Header = () => {
         show ? "translate-y-0" : "-translate-y-full"
       } tansform fixed top-0 left-0 w-full ${
         lastScrollY > 10 ? "shadow-xl py-4" : "py-6"
-      } transition-all duration-300 ease-in-out  backdrop-filter backdrop-blur-md bg-body/80 px-16 z-50`}
+      } transition-all duration-300 ease-in-out  backdrop-filter backdrop-blur-md bg-body/80 md:px-16 px-6 z-50`}
     >
         <div className="flex justify-between items-center gap-10">
         
@@ -77,7 +77,7 @@ const Header = () => {
             >
               U
             </motion.div>
-          <div className="flex items-center gap-7">
+          <div className="md:flex hidden items-center gap-7">
             {menu.map((nav, index) => (
               <motion.div
                 initial={{ y: -12, opacity: 0 }}
