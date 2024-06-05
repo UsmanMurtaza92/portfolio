@@ -30,7 +30,7 @@ export default function Page() {
       <Header />
       <LeftSidebar />
       <RightSidebar />
-      <main className={`max-w-6xl md:w-[80%] w-full mx-auto`}>
+      <main className={`max-w-6xl md:w-[80%] w-full mx-auto md:px-0 px-3`}>
         <Home />
         <About />
         <Experience />
