@@ -30,10 +30,6 @@ const Experience = () => {
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log('showLeftShade = ', showLeftShade);
-  console.log('showRightShade = ', showRightShade);
-  
-
   const expVariants: Variants = {
     offscreen: {
       y: 30,
@@ -75,13 +71,13 @@ const Experience = () => {
           <Heading headingNumber={2} headingText="Where I’ve Worked" />
           <div className="relative flex md:flex-row flex-col items-start mt-10 mb-5">
             <div
-              className={`absolute left-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-r from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
+              className={`md:hidden block absolute left-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-r from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
                 showLeftShade ? "opacity-100" : "opacity-0"
               }`}
             />
 
             <div
-              className={`absolute right-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-l from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
+              className={`md:hidden block absolute right-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-l from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
                 showRightShade ? "opacity-100" : "opacity-0"
               }`}
             />

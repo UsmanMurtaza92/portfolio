@@ -16,7 +16,6 @@ type FeatureProductProps = {
 }
 
 const FeatureProjectCard = ({ project, index }: FeatureProductProps) => {
-  console.log('project detail => ', project.image.src);
   
   return (
     <div className={`relative project-layer md:bg-none bg-cover bg-center md:p-0 px-6 py-7`} style={{backgroundImage: `url(/images/projects/project${index+1}.png)`}} >
