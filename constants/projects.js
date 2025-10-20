@@ -4,8 +4,17 @@ import project3 from "@/public/images/projects/project3.png";
 
 export const featuredProjects = [
   {
-    name: "Rent My Ride, Car Rental",
+    name: "Website/Portfolio Builder",
     image: project1,
+    detail:
+      "Linky is a single link that you can use to house all the links to your social media profiles, websites, and other content. It's drag-and-drop builder to create your page. It's a great way to share all your content in one place, whether it be your favourite songs on Spotify, or a link to your latest products.",
+    tech: ["Next.js", "Radix UI", "Context API", "Framer Motion", "Prisma"],
+    webUrl: "https://lin.ky/",
+    githubUrl: "",
+  },
+  {
+    name: "Rent My Ride, Car Rental",
+    image: project2,
     detail:
       "Luxury car rental services in Dubai with zero deposit deals. Users can choose from a variety of luxury cars and book their preferred car for a ride. It also provides a platform for car owners to list their vehicles for rent.",
     tech: ["Next.js", "Tailwind CSS", "Redux Toolkit", "Crypto Payment"],
@@ -14,25 +23,24 @@ export const featuredProjects = [
   },
   {
     name: "Sendtime, Scheduling App",
-    image: project2,
+    image: project3,
     detail:
       "Sendtime is a scheduling tool that is easy to use, flexible, and powerful. It can help users save time by efficiently scheduling and rescheduling appointments and create a personalized booking page with just a few clicks.",
     tech: ["React", "Styled Components", "TypeScript", "Context API"],
     webUrl: "https://landing.sendtime.app/en",
     githubUrl: "",
   },
+];
+
+export const projects = [
   {
     name: "Spark Capture Online Showroom",
-    image: project3,
     detail:
       "Spark Capture is a team of passionate photographers who offer turnkey inventory merchandising solutions for car dealerships. They work with various dealerships to create the best visual experience for their online inventories.",
     tech: ["Nuxt.js", "Tailwind CSS", "Vuex", "Nuxt Axios"],
     webUrl: "https://www.sparkcapture.com/",
     githubUrl: "",
   },
-];
-
-export const projects = [
   {
     name: "IIG News",
     detail:

@@ -29,22 +29,28 @@ const About = () => {
     'Vue',
     'TypeScript',
     'Redux',
+    'Redux Toolkit',
+    'Recoil',
     'Tailwind CSS',
-    'Framer Motion',
+    'Radix UI',
     'Material UI',
     'Styled Components',
     'Sass',
+    'Framer Motion',
+    'GSAP',
+    'Socket.io',
+    'Prisma',
   ]
 
   return (
     <section
       id="about"
-      style={{
-        backgroundImage: "url(/images/about.png)",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: "url(/images/about.png)",
+      //   backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      // }}
       className="about-poster relative py-10 max-w-6xl w-full mx-auto"
     >
       <Container>

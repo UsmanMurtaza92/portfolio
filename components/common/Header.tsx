@@ -2,10 +2,13 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { Variants, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Hamburger from "../ui/Hamburger";
+import { socialLinks } from "@/constants/general";
+import Link from "next/link";
+import { Icon } from '@iconify/react';
 
 const Header = () => {
 
@@ -113,7 +116,7 @@ const Header = () => {
                 key={index}
                 className="cursor-pointer"
               >
-                <Link
+                <ScrollLink
                   activeClass="active"
                   to={nav.link}
                   spy={true}
@@ -126,7 +129,7 @@ const Header = () => {
                     </span>
                     {nav.title}
                   </div>
-                </Link>
+                </ScrollLink>
               </motion.div>
             ))}
             <motion.div
@@ -134,7 +137,7 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 2 }}
             >
-              <a href='/files/resume.pdf' download>
+              <a href='/files/Muhammad Usman Resume.pdf' download>
                 <Button text="Resume" link="/" size="small" />
               </a>
             </motion.div>
@@ -149,14 +152,14 @@ const Header = () => {
           className={`md:hidden flex flex-col justify-center items-center fixed top-0 right-0 h-screen w-72 gap-7 bg-LightNavy`}>
             {menu.map((nav, index) => (
               <motion.div
-                initial={{ y: -12, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: index / 7 + 0.5 + 0.9 }}
+                initial={{ x: 30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: index / 7 }}
                 viewport={{ once: true }}
                 key={index}
                 className="cursor-pointer"
               >
-                <Link
+                <ScrollLink
                   activeClass="active"
                   to={nav.link}
                   spy={true}
@@ -171,20 +174,39 @@ const Header = () => {
                     </span>
                     {nav.title}
                   </div>
-                </Link>
+                </ScrollLink>
               </motion.div>
             ))}
             <motion.div
-              initial={{ y: -12, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: 2 }}
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 1 }}
+              viewport={{ once: true }}
               className="mt-3"
             >
-              <a href='/files/resume.pdf' download>
+              <a href='/files/Muhammad Usman Resume.pdf' download>
                 <Button text="Resume" link="/"  />
               </a>
             </motion.div>
+        
+            <motion.div 
+              initial={{ y:20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: .6, delay: 1.5 }}
+              viewport={{ once: true }}
+              className='flex justify-center items-center gap-7 py-4'>
+              {socialLinks.map((social, index) => 
+                <div key={index} className='flex justify-center items-center cursor-pointer transform transition duration-150 ease-linear hover:-translate-y-1.5 group'>
+                  <Link href={social.link} legacyBehavior>
+                    <a target="_blank">
+                      <Icon icon={social.icon} width={24} className='text-LightestSlate group-hover:text-primary' />
+                    </a>
+                  </Link>
+                </div>
+              )}
+            </motion.div>
           </motion.div>
+
           
           <Hamburger 
           isOpen={isOpen}

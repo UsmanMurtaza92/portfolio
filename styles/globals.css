@@ -8,6 +8,15 @@ body {
   background-color: #0a192f;
 }
 
+input,
+textarea,
+button,
+select,
+a,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .logo-box {
   height: 49px;
   width: 42px;

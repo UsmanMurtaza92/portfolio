@@ -60,19 +60,19 @@ const Hamburger = ({isOpen, setIsOpen}: HamburgerProps) => {
     whileInView="onscreen" 
     variants={hamburger} 
     onClick={handleClick} 
-    className={`md:hidden flex items-end flex-col gap-2 cursor-pointer py-3`}>
+    className={`md:hidden flex items-end flex-col gap-3 cursor-pointer py-3`}>
       <motion.div 
       whileInView="onscreen"
       variants={topBar}
-      className={` ${isOpen ? 'w-8' : 'w-9'} h-0.5 bg-primary rounded-md transition-all ease-linear duration-100`}></motion.div>
-      <motion.div 
+      className={` w-8 h-0.5 bg-primary rounded-md transition-all ease-linear duration-100`}></motion.div>
+      {/* <motion.div 
       whileInView="onscreen"
       variants={middleBar}
-      className={` w-[30px] h-0.5 bg-primary rounded-md`}></motion.div>
+      className={` w-[30px] h-0.5 bg-primary rounded-md`}></motion.div> */}
       <motion.div 
       whileInView="onscreen"
       variants={bottomBar}
-      className={`${isOpen ? '-mt-2.5 w-8' : 'mt-0 w-[25px]'} h-0.5 bg-primary rounded-md transition-all ease-linear duration-100`}></motion.div>
+      className={`${isOpen ? '-mt-1' : 'mt-0'} w-8 h-0.5 bg-primary rounded-md transition-all ease-linear duration-100`}></motion.div>
     </motion.div>
   )
 }

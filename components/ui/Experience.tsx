@@ -1,79 +1,38 @@
-import React from "react";
+import React, { useRef } from "react";
 import Container from "./Container";
 import Heading from "./Heading";
 import { useState, useEffect } from "react";
 import { motion, Variants } from 'framer-motion'
 import { Icon } from "@iconify/react";
+import { workHistory } from "@/constants/experience";
 
 const Experience = () => {
-  const workHistory = [
-    {
-      id: 1,
-      name: "The Dev Corporate",
-      role: "Software Engineer",
-      fromDate: "Aug 2023",
-      toDate: "Present",
-      isFullTime: true,
-      details: [
-        "Deliver high-quality, robust production code for a diverse array of projects for clients",
-        "Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirement.",
-        "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities.",
-        "Developed chat support functionality using socket.io"
-      ],
-    },
-    {
-      id: 2,
-      name: "Techbay Solutions",
-      role: "React.js Developer",
-      fromDate: "May 2022",
-      toDate: "Aug 23",
-      isFullTime: true,
-      details: [
-        "Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirement.",
-        "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities.",
-        "Implemented features such as product listing, search functionality, shopping cart management, and secure checkout processes.",
-      ],
-    },
-    {
-      id: 3,
-      name: "IIFA Tech.",
-      role: "Vue.js Developer ( Nuxt.js )",
-      fromDate: "March 2022",
-      toDate: "july 2022",
-      isFullTime: false,
-      details: [
-        "Proposed and implemented scalable solutions to the issues identified with the applications.",
-        "Developed and styled interactive web applications using Nuxt.js and Tailwind CSS.",
-        "Conducted comprehensive testing and debugging, resolving issues and enhancing the overall user experience."
-      ],
-    },
-    {
-      id: 4,
-      name: "United Softlabs",
-      role: "Vue.js Developer",
-      fromDate: "November 2021",
-      toDate: "May 2022",
-      isFullTime: true,
-      details: [
-        "Developed and maintained responsive web applications using Vue.js and Nuxt.js frameworks.",
-        "Collaborated with back-end developers to integrate front-end components with server-side logic, ensuring seamless data exchange.",
-        "Implemented state management using Vuex, ensuring consistent data flow and efficient application state management."
-      ],
-    },
-    {
-      id: 5,
-      name: "TimeTech Sol.",
-      role: "Frontend Developer",
-      fromDate: "December 2020",
-      toDate: "November 2021",
-      isFullTime: true,
-      details: [
-        "Gathered specifications and other key details to meet requirements of site development.",
-        "Designed and developed websites primarily using HTML, CSS, Sass, JavaScript.",
-        "Integrated RESTful APIs and implemented data retrieval and manipulation using Axios for seamless interaction with back-end systems.",
-      ],
-    },
-  ];
+
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [showLeftShade, setShowLeftShade] = useState(false);
+  const [showRightShade, setShowRightShade] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = el;
+
+      setShowLeftShade(scrollLeft > 0);
+      setShowRightShade(scrollLeft + clientWidth < scrollWidth - 1); // -1 for rounding issues
+    };
+
+    // Initial check
+    handleScroll();
+
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  console.log('showLeftShade = ', showLeftShade);
+  console.log('showRightShade = ', showRightShade);
+  
 
   const expVariants: Variants = {
     offscreen: {
@@ -114,8 +73,19 @@ const Experience = () => {
       <Container>
         <div>
           <Heading headingNumber={2} headingText="Where I’ve Worked" />
-          <div className="flex md:flex-row flex-col items-start mt-10 mb-5">
-            <div className="overflow-x-scroll md:w-auto w-full flex-shrink-0">
+          <div className="relative flex md:flex-row flex-col items-start mt-10 mb-5">
+            <div
+              className={`absolute left-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-r from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
+                showLeftShade ? "opacity-100" : "opacity-0"
+              }`}
+            />
+
+            <div
+              className={`absolute right-0 top-0 bottom-0 w-8 h-11 bg-gradient-to-l from-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ${
+                showRightShade ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <div ref={scrollRef} className="overflow-x-scroll scroll-smooth md:w-auto w-full flex-shrink-0">
               <div className="md:block flex flex-shrink-0 relative md:border-l-[3px] border-Slate/20">
                 <div
                   style={{ top: `${43 * (selectedWork.id - 1)}px` }}
