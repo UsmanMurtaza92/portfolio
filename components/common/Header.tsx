@@ -137,7 +137,7 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 2 }}
             >
-              <a href='/files/Muhammad Usman Resume.pdf' download>
+              <a href='/files/Muhammad_Usman_Resume.pdf' download>
                 <Button text="Resume" link="/" size="small" />
               </a>
             </motion.div>
@@ -184,7 +184,7 @@ const Header = () => {
               viewport={{ once: true }}
               className="mt-3"
             >
-              <a href='/files/Muhammad Usman Resume.pdf' download>
+              <a href='/files/Muhammad_Usman_Resume.pdf' download>
                 <Button text="Resume" link="/"  />
               </a>
             </motion.div>
