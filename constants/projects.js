@@ -1,6 +1,7 @@
 import project1 from "@/public/images/projects/project1.png";
 import project2 from "@/public/images/projects/project2.png";
 import project3 from "@/public/images/projects/project3.png";
+import project4 from "@/public/images/projects/project4.png";
 
 export const featuredProjects = [
   {
@@ -10,6 +11,15 @@ export const featuredProjects = [
       "Linky is a single link that you can use to house all the links to your social media profiles, websites, and other content. It's drag-and-drop builder to create your page. It's a great way to share all your content in one place, whether it be your favourite songs on Spotify, or a link to your latest products.",
     tech: ["Next.js", "Radix UI", "Context API", "Framer Motion", "Prisma"],
     webUrl: "https://lin.ky/",
+    githubUrl: "",
+  },
+  {
+    name: "NYS Markets, Trading Dashboards",
+    image: project4,
+    detail:
+      "NYS Markets is a forex prop trading firm that gives traders funded accounts through a challenge-based program, with fast payouts and access in 190+ countries. Built the trading challenge and account plan flows so users can compare funding options and sign up easily.",
+    tech: ["Next.js", "Tailwind CSS", "Charts.js", "React Query", "AI Chatbot"],
+    webUrl: "https://nysmarkets.com/",
     githubUrl: "",
   },
   {
