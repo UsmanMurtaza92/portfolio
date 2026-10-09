@@ -7,17 +7,18 @@ import LeftSidebar from "@/components/ui/LeftSidebar";
 import Project from "@/components/ui/Project";
 import RightSidebar from "@/components/ui/RightSidebar";
 import Head from "next/head";
-import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2500);
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -25,33 +26,66 @@ export default function Page() {
         <title>Muhammad Usman</title>
         <meta property="og:title" content="Muhammad Usman" key="title" />
       </Head>
+      {!isLoading && (
+        <>
+          <Header />
+          <LeftSidebar />
+          <RightSidebar />
+          <main className={`max-w-6xl md:w-[80%] w-full mx-auto md:px-0 px-3`}>
+            <Home />
+            <About />
+            <Experience />
+            <Project />
+            <Contact />
+          </main>
+        </>
+      )}
 
-      {!isLoading && <>
-      <Header />
-      <LeftSidebar />
-      <RightSidebar />
-      <main className={`max-w-6xl md:w-[80%] w-full mx-auto md:px-0 px-3`}>
-        <Home />
-        <About />
-        <Experience />
-        <Project />
-        <Contact />
-      </main>
-      </>
-      }
-        
       {/*    Page Load Animation    */}
-      <div className={`${isLoading ? 'bg-black/40 backdrop-blur-lg' : 'bg-transparent -translate-y-full backdrop-blur-0'} transform transition-all duration-700  ease-in-out backdrop-filter fixed top-0 left-0 h-full w-full flex justify-center items-center z-50`}>
-        <div className="flex flex-col items-center w-max ">
-          <div className="min-h-[55px] w-full overflow-hidden">
-            <h1 className="heading text-center lg:text-5xl md:text-4xl text-3xl font-bold text-LightestSlate transform translate-y-full lg:mt-2 md:mt-4 mt-6">Muhammad Usman</h1>
-          </div>
-          <div className="loading-bar h-0.5 bg-LightestSlate rounded-md my-1"></div>
-          <div className="min-h-[30px] w-full overflow-hidden">
-            <p className="sub-heading text-center lg:text-xl md:text-lg text-[15px] uppercase font-smeibold transform -translate-y-full text-primary">Front end Software Engineer</p>
-          </div>
-        </div>
-      </div>
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+            className="bg-black/40 backdrop-blur-lg fixed top-0 left-0 h-full w-full flex justify-center items-center z-50"
+          >
+            <div className="flex flex-col items-center w-max">
+              <div className="min-h-[55px] w-full overflow-hidden">
+                <motion.h1
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.2, delay: 0.85, ease: "easeOut" }}
+                  className="font-baskerville text-center lg:text-5xl md:text-4xl text-3xl text-LightestSlate lg:mt-2 md:mt-4 mt-6"
+                >
+                  Muhammad Usman
+                </motion.h1>
+              </div>
+              <motion.div
+                initial={{ width: "0%" }}
+                animate={{ width: ["0%", "100%", "100%", "0%"] }}
+                transition={{
+                  duration: 1.35,
+                  delay: 0.1,
+                  times: [0, 0.385, 0.692, 1],
+                  ease: "easeInOut",
+                }}
+                className="h-0.5 bg-LightestSlate rounded-md my-1"
+              />
+              <div className="min-h-[30px] w-full overflow-hidden">
+                <motion.p
+                  initial={{ y: "-100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.2, delay: 0.85, ease: "easeOut" }}
+                  className="text-center lg:text-xl md:text-lg text-[15px] uppercase font-smeibold text-primary"
+                >
+                  Front end Software Engineer
+                </motion.p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
-  )
+  );
 }
