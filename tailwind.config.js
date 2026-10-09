@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        baskerville: ["'Libre Baskerville'", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         body: '#0a192f',

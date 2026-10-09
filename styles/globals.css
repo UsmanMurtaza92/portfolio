@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -107,21 +107,6 @@ div {
   background-color: rgba(10, 25, 47, 0.92);
 }
 
-.loading-bar {
-  animation: stretch 0.7s ease-in-out;
-  animation-delay: 0.3s;
-}
-
-.heading {
-  animation: slideUp 0.2s ease-out forwards;
-  animation-delay: 0.7s;
-}
-
-.sub-heading {
-  animation: slideDown 0.2s ease-out forwards;
-  animation-delay: 0.7s;
-}
-
 .active {
   color: #64ffda !important;
 }
@@ -139,51 +124,6 @@ div {
 
 .loading-heading {
   font-size: clamp(1rem, 10vw, 3rem);
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes stretch {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 100%;
-  }
-  60% {
-    width: 100%;
-  }
-  70% {
-    .project-layer {
-      background-image: none;
-    }
-    width: 100%;
-  }
-  80% {
-    width: 100%;
-  }
-  90% {
-    width: 50%;
-  }
-  100% {
-    width: 0%;
-  }
 }
 
 @media only screen and (min-width: 768px) {
