@@ -2,6 +2,7 @@ import project1 from "@/public/images/projects/project1.png";
 import project2 from "@/public/images/projects/project2.png";
 import project3 from "@/public/images/projects/project3.png";
 import project4 from "@/public/images/projects/project4.png";
+import project5 from "@/public/images/projects/project5.png";
 
 export const featuredProjects = [
   {
@@ -20,6 +21,15 @@ export const featuredProjects = [
       "NYS Markets is a forex prop trading firm that gives traders funded accounts through a challenge-based program, with fast payouts and access in 190+ countries. Built the trading challenge and account plan flows so users can compare funding options and sign up easily.",
     tech: ["Next.js", "Tailwind CSS", "Charts.js", "React Query", "AI Chatbot"],
     webUrl: "https://nysmarkets.com/",
+    githubUrl: "",
+  },
+  {
+    name: "creditmarket.ae",
+    image: project5,
+    detail:
+      "CreditMarket.ae is a UAE financial products marketplace for comparing and applying for credit cards, personal and car loans, mortgages, bank accounts and business banking. It works with 12+ partner banks. I don’t know what your role on it was, so I’ve written the bullets around what the platform does and left brackets for anything only you would know.",
+    tech: ["Next.js", "Tailwind CSS", "Context API", "Vercel"],
+    webUrl: "https://www.creditmarket.ae/",
     githubUrl: "",
   },
   {
